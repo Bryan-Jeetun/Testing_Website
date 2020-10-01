@@ -4,10 +4,10 @@ import domain.DomainException;
 
 public class Game {
     private int minimumLeeftijd;
-    private int prijs;
+    private double prijs;
     private final String naam;
 
-    public Game(String naam, int minimumLeeftijd, int prijs) {
+    public Game(String naam, int minimumLeeftijd, double prijs) {
         setMinimumLeeftijd(minimumLeeftijd);
         setPrijs(prijs);
         if (naam == null || naam.trim().isEmpty() || naam.trim().length() < 3)
@@ -29,7 +29,7 @@ public class Game {
         return prijs;
     }
 
-    public void setPrijs(int prijs) {
+    public void setPrijs(double prijs) {
         if (prijs<0)
             throw new DomainException("Geen geldige prijs");
         this.prijs = prijs;
