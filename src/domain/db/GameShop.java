@@ -11,12 +11,12 @@ public class GameShop {
 
     public GameShop() {
         games = new ArrayList<>();
-        Game GTAV = new Game("GTA V", 18, 29.99);
-        Game ARK = new Game("ARK Survival Evolved", 10, 49.99);
-        Game Fifa = new Game("Fifa 21", 13, 59.99);
-        Game Minercraft = new Game("Minecraft", 7, 26.95);
-        Game CallOfDuty = new Game("Call of Duty: Black Ops Cold War", 18, 59.99);
-        Game FlightSimulator = new Game("Microsoft Flight Simulator Premium Deluxe Edition", 13, 119.99);
+        Game GTAV = new Game("GTA V", 18, 30);
+        Game ARK = new Game("ARK Survival Evolved", 10, 50);
+        Game Fifa = new Game("Fifa 21", 13, 60);
+        Game Minercraft = new Game("Minecraft", 7, 27);
+        Game CallOfDuty = new Game("Call of Duty: Black Ops Cold War", 18, 60);
+        Game FlightSimulator = new Game("Microsoft Flight Simulator Premium Deluxe Edition", 13, 120);
         this.voegToe(GTAV);
         this.voegToe(ARK);
         this.voegToe(Fifa);

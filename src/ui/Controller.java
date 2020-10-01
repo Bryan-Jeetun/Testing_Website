@@ -75,14 +75,14 @@ public class Controller extends HttpServlet {
         String prijs = request.getParameter("prijs");
         String minimumLeeftijd = request.getParameter("minimumLeeftijd");
 
-        if (naamGame == null || naamGame.trim().equals("")) {
+        if (naamGame == null || naamGame.trim().equals("") || naamGame.contains("-") || naamGame.contains(".") || naamGame.contains("_")){
             errors.add("De game naam mag niet leeg zijn.");
             request.setAttribute("prevNaamGame", naamGame);
             request.setAttribute("prevPrijs", prijs);
             request.setAttribute("prevMinimumLeeftijd", minimumLeeftijd);
         }
 
-        if (prijs.trim().isEmpty() || prijs == null || Double.parseDouble(prijs) < 0) {
+        if (prijs.trim().isEmpty() || prijs == null || Integer.parseInt(prijs) < 0) {
             errors.add("De prijs mag niet leeg zijn en moet groter zijn dan 0");
             request.setAttribute("prevNaamGame", naamGame);
             request.setAttribute("prevPrijs", prijs);
@@ -104,10 +104,10 @@ public class Controller extends HttpServlet {
         String minimumLeeftijd = request.getParameter("minimumLeeftijd");
 
         try {
-            double prijsDouble = Double.parseDouble(prijs);
+            int prijsInt = Integer.parseInt(prijs);
             int minimulLeeftijdInt = Integer.parseInt(minimumLeeftijd);
 
-            gameShop.voegToe(new Game(naamGame, minimulLeeftijdInt, prijsDouble));
+            gameShop.voegToe(new Game(naamGame, minimulLeeftijdInt, prijsInt));
             request.setAttribute("games", gameShop.geefGames());
 
         } catch (NumberFormatException ex) {
